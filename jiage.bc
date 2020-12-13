@@ -1,0 +1,38 @@
+# m酱自用闲鱼商品价格计算程序 ver.0.1
+# 用法:
+#   $ bc -q jiage.bc
+
+# 人民币最小面值只有1分 -> 0.01
+scale=2
+# 自己设定的运费
+yf = 18
+print "\n闲鱼商品价格计算程序！\n"
+print "  要退出程序，请输入0。\n\n"
+
+while (1) {
+    print "商品成本价？"; cbj = read()
+    cbj /= 1
+    if (cbj == 0 || cbj < 0) break; # 当输入0和负数时退出
+    # 黄金分割数第0项：1
+    g0 = cbj + yf
+    g0 /= 1
+    print "商品价格 = "; g0
+    # 黄金分割数第1项：0.618...
+    g1 = (((sqrt(5) + 1) / 2) - 1) * cbj + yf
+    g1 /= 1
+    print "降价商品价格 = "; g1
+    # 黄金分割数第2项：1.618...
+    g2 = ((sqrt(5) + 1) / 2) * cbj + yf
+    g2 /= 1
+    print "涨价商品价格1 = "; print g2; print "\t利润率 = 61.8%\n"
+    # 黄金分割数第3项：2.618...
+    g3 = (((sqrt(5) + 1) / 2) + 1) * cbj + yf
+    g3 /= 1
+    print "涨价商品价格2 = "; print g3; print "\t利润率 = 161.8%\n"
+
+    print "\n"
+}
+print "\n"
+
+quit
+
