@@ -1,10 +1,10 @@
 # m酱自用闲鱼商品价格计算程序
 
+使用的bc版本：1.07.1
+
 用法：
 
-`$ bc -q jiage.bc`
-
-```bash
+```Shell
 mike@PC jiage $ bc -q jiage.bc
 
 闲鱼商品价格计算程序！
