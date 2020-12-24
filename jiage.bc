@@ -1,4 +1,5 @@
-# m酱自用闲鱼商品价格计算程序 ver.0.1
+#!/usr/bin/bc -q
+# m酱自用闲鱼商品价格计算程序 ver.0.2
 # 用法:
 #   $ bc -q jiage.bc
 
@@ -8,10 +9,10 @@ s = 8 # 打印的数量
 
 # 计算黄金分割数
 define g(n) {
-    if (n == 0) {return (1);} else {
-        if (n == 1) {return ((sqrt(5) + 1) / 2);} else {
-            if (n > 1) {return (g(n-1) + g(n-2));} else {
-                 if (n < 0) {return (g(n+2) - g(n+1));}
+    if (n == 0) { return (1); } else {
+        if (n == 1) { return ((sqrt(5) + 1) / 2); } else {
+            if (n > 1) { return (g(n-1) + g(n-2)); } else {
+                 if (n < 0) { return (g(n+2) - g(n+1)); }
             }
         }
     }
